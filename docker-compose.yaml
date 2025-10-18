@@ -1,13 +1,13 @@
 services:
-  app:
-    container_name: app
-    build: ./docker/app # イメージ指定. Dockerfileで独自に作っている場合はこっち
-    image: my-app:1.0.0 #上でbuildしたイメージにタグ付けする
+  php-app:
+    container_name: php-app
+    build: ./docker/php-app # イメージ指定. Dockerfileで独自に作っている場合はこっち
+    image: my-php-app:1.0.0 #上でbuildしたイメージにタグ付けする
     ports:
       - "8000:8000"
     volumes:
       - type: bind
-        source: ./src
+        source: ./src/php
         target: /my-work
   db:
     container_name: db

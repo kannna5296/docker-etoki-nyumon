@@ -24,7 +24,7 @@ foreach ($users as $user) {
   echo "<p>id: " . "" . $user['id'] . ", name: " . $user['name'] . "</p>";
 }
 
-$subject = "Test Email";
+$subject = "Test Email From PHP";
 $body = "DockerHubはこちら→ https://hub.docker.com/";
 foreach ($users as $user) {
   #mb_send_mailはPHPのマルチバイト対応メール送信関数
