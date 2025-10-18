@@ -9,6 +9,16 @@ services:
       - type: bind
         source: ./src/php
         target: /my-work
+  python-app:
+    container_name: python-app
+    build: ./docker/python-app # イメージ指定. Dockerfileで独自に作っている場合はこっち
+    image: my-python-app:1.0.0 #上でbuildしたイメージにタグ付けする
+    ports:
+      - "8001:8001"
+    volumes:
+      - type: bind
+        source: ./src/python
+        target: /my-work
   db:
     container_name: db
     image: mysql:8.4.0 # イメージ指定. 公式イメージをそのまま使う場合はこっち
