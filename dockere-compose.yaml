@@ -1,5 +1,6 @@
 services:
   app:
+    build: ./docker/app # イメージ指定. Dockerfileで独自に作っている場合はこっち
     ports:
       - "8000:8000"
     volumes:
@@ -7,6 +8,7 @@ services:
         source: ./src
         target: /my-work
   db:
+    image: mysql:8.4.0 # イメージ指定. 公式イメージをそのまま使う場合はこっち
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_USER=app
@@ -23,6 +25,7 @@ services:
         source: ./docker/db/init
         target: /docker-entrypoint-initdb.d
   mail:
+    image: axllent/mailpit:v1.10.1 # イメージ指定. 公式イメージをそのまま使う場合はこっち 
     environment:
       - TZ=Asia/Tokyo
       - MP_DATA_FILE=/data/mailpit.db
@@ -36,3 +39,5 @@ services:
 volumes:
   db-compose-volume:
   mail-compose-volume:
+
+# ネットワークはcomposeの中で独自に作られるので原則、明示的に指定不要らしい
