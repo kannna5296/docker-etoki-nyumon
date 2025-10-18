@@ -17,3 +17,7 @@ services:
       - MP_DATA_FILE=/data/mailpit.db
     ports:
       - "8025:8025"
+
+volumes:
+  db-compose-volume:
+  mail-compose-volume:
