@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install -y msmtp-mta
 
 COPY ./msmtprc /etc/msmtprc
 
-CMD ["/user/local/bin/php", "--server", "0.0.0.0:8000", "--docroot", "/my-work"]
+CMD ["/usr/local/bin/php", "--server", "0.0.0.0:8000", "--docroot", "/my-work"]
