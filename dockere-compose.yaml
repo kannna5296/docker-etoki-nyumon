@@ -11,12 +11,20 @@ services:
       - TZ=Asia/Tokyo
     ports:
       - "3306:3306"
+    volumes:
+      - type: volume
+        source: db-compose-volume
+        target: /var/lib/mysql
   mail:
     environment:
       - TZ=Asia/Tokyo
       - MP_DATA_FILE=/data/mailpit.db
     ports:
-      - "8025:8025"
+      - "8025:8025
+    volumes:
+      - type: volume
+        source: mail-compose-volume
+        target: /data
 
 volumes:
   db-compose-volume:
