@@ -4,6 +4,17 @@ https://www.shuwasystem.co.jp/book/9784798071503.html　
 
 プラスアルファで、python用のコンテナもdocker composeで作ってみた
 
+## 動作確認
+
+```
+docker compose up -d
+```
+
+
+
+http://localhost:8000/ →phpアプリ
+http://localhost:8001/ →pythonアプリ
+
 
 ## コマンドで作るときのやつメモ
 
