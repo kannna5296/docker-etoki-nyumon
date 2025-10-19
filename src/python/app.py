@@ -1,5 +1,5 @@
 from flask import Flask
-import python.main as main
+import main
 
 # サーバ起動ようのスクリプト
 # phpはDockerfile/CMDでコマンド指定+スクリプトの結果を動的に取得できたけど、pythonはFlask入れた方が楽そうなのでこっちにする
