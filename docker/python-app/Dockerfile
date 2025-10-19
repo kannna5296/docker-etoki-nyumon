@@ -4,7 +4,7 @@ FROM python:3.11-slim
 RUN pip install mysql-connector-python flask
 
 # メールモジュール
-RUN apt-get update && apt-get install -y msmtp-mta
+RUN apt-get update && apt-get install -y msmtp-mta 
 COPY ./msmtprc /etc/msmtprc
 
 # Flaskアプリ起動
